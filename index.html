@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WEBSIM-WIKI | Home</title>
+    <script src="nav.js"></script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #d1d1d1;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .hero {
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 { color: #ff0000; text-shadow: 2px 2px #550000; font-size: 3rem; margin-bottom: 5px; }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 220px);
+            gap: 30px;
+            margin-top: 40px;
+            padding-bottom: 50px;
+        }
+        .wiki-card {
+            border: 1px solid #333;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            background: #000;
+        }
+        .wiki-card:hover { border-color: #ff0000; }
+        .wiki-card img { width: 100%; height: 150px; object-fit: cover; }
+        
+        .lost-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            z-index: 100;
+        }
+        .lost-btn img { width: 100%; opacity: 0.4; }
+        .lost-btn img:hover { opacity: 1; }
+
+        #secret-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: black;
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <h1>WEBSIMWIKI</h1>
+        <p>SYSTEM ACCESS GRANTED</p>
+    </div>
+
+    <div class="grid-container">
+        <a href="wiki-template.html" class="wiki-card">
+            <img src="images/subject1.png">
+            <p>ENTRY-001</p>
+        </a>
+        <a href="categories.html" class="wiki-card">
+            <img src="images/folder.png">
+            <p>CATEGORIES</p>
+        </a>
+    </div>
+
+    <a href="secret-audio.html" class="lost-btn">
+        <img src="images/lost.png">
+    </a>
+
+    <div id="secret-overlay">
+        <img src="images/them.gif">
+    </div>
+
+    <script>
+        let totalDist = 0;
+        let active = false;
+        let lastX = 0;
+        let lastY = 0;
+
+        window.addEventListener('mousedown', (e) => {
+            active = true;
+            totalDist = 0;
+            lastX = e.clientX;
+            lastY = e.clientY;
+        });
+
+        window.addEventListener('mouseup', () => {
+            active = false;
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (active) {
+                let d = Math.hypot(e.clientX - lastX, e.clientY - lastY);
+                totalDist += d;
+                lastX = e.clientX;
+                lastY = e.clientY;
+
+                if (totalDist > 3000) {
+                    active = false;
+                    let p = prompt("PASSWORD");
+                    if (p === "dead") {
+                        document.getElementById('secret-overlay').style.display = 'flex';
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

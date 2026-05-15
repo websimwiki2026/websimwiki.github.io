@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WEBSIMWIKI | Archives</title>
+    <script src="nav.js"></script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #888;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+        }
+        .container { max-width: 900px; margin: 40px auto; }
+        h1 { color: #ff0000; border-bottom: 2px solid #ff0000; padding-bottom: 10px; }
+        .cat-group { margin-bottom: 60px; }
+        .cat-header { color: #eee; font-size: 1.2rem; margin-bottom: 20px; text-decoration: underline; }
+        .entry-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: inherit;
+            padding: 10px;
+            border: 1px solid transparent;
+        }
+        .entry-row:hover {
+            background: #111;
+            border-color: #444;
+            color: #fff;
+        }
+        .entry-row img {
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+            border: 1px solid #ff0000;
+            object-fit: cover;
+        }
+        .entry-name { font-size: 1.1rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>DATABASE INDEX</h1>
+
+        <div class="cat-group">
+            <div class="cat-header">POPULAR_ENTRIES</div>
+            
+            <a href="wiki-template.html" class="entry-row">
+                <img src="images/subject1.png" alt="Icon">
+                <span class="entry-name">Subject_001 (The Wanderer)</span>
+            </a>
+
+            <a href="#" class="entry-row">
+                <img src="images/placeholder.png" alt="Icon">
+                <span class="entry-name">Subject_002 (Unknown)</span>
+            </a>
+        </div>
+
+        <div class="cat-group">
+            <div class="cat-header">CORRUPTED_FILES</div>
+            
+            <a href="secret-audio.html" class="entry-row">
+                <img src="images/static.gif" alt="Icon">
+                <span class="entry-name">SIGNAL_LOST.mp3</span>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

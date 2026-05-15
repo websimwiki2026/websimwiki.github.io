@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WEBSIMWIKI | Subject File</title>
+    <script src="nav.js"></script>
+    <style>
+        body { background: #0c0c0c; color: #bbb; font-family: sans-serif; margin: 0; }
+        .wrapper { max-width: 1000px; margin: 50px auto; padding: 20px; display: flex; gap: 40px; }
+        .sidebar {
+            width: 300px;
+            background: #000;
+            border: 1px solid #ff0000;
+            padding: 15px;
+            height: fit-content;
+        }
+        .sidebar img { width: 100%; border-bottom: 1px solid #ff0000; margin-bottom: 10px; }
+        .infobox-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9rem; }
+        .main-content { flex: 1; }
+        h1 { color: #fff; font-size: 2.5rem; margin-top: 0; }
+        hr { border: 0; border-top: 1px solid #333; margin: 20px 0; }
+        p { line-height: 1.8; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="main-content">
+            <h1>Subject 001</h1>
+            <hr>
+            <p>Detailed observation data goes here. The entity is known for appearing in peripheral vision during low-light conditions.</p>
+            <p>Attempts to capture clear footage have resulted in hardware failure and data corruption.</p>
+        </div>
+
+        <div class="sidebar">
+            <img src="images/subject1.png" alt="Subject Image">
+            <div class="infobox-row"><strong>NAME:</strong> <span>Wanderer</span></div>
+            <div class="infobox-row"><strong>CLASS:</strong> <span>Anomalous</span></div>
+            <div class="infobox-row"><strong>ORIGIN:</strong> <span>[REDACTED]</span></div>
+        </div>
+    </div>
+
+</body>
+</html>
